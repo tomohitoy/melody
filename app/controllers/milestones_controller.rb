@@ -1,9 +1,9 @@
 class MilestonesController < ApplicationController
   # GET /milestones
   # GET /milestones.json
-  #def index
-  #  @milestones = Milestone.all
-  #end
+  def index
+    @milestones = Milestone.all
+  end
 
   # GET /milestones/1
   # GET /milestones/1.json
