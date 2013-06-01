@@ -10,6 +10,11 @@ gem 'therubyracer'
 gem 'geocoder'
 gem 'paperclip'
 gem 'carrierwave'
+gem 'private_pub'
+gem 'thin'
+gem 'faye'
+gem 'remotipart','~>1.0'
+gem 'hashie'
 
 # Gems used only for assets and not required
 # in production environments by default.
