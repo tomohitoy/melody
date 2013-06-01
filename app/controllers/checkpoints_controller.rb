@@ -24,7 +24,8 @@ class CheckpointsController < ApplicationController
   # GET /checkpoints/new
   # GET /checkpoints/new.json
   def new
-    @checkpoint = Checkpoint.new
+    @mission = Mission.find(params[:mission_id])
+    @checkpoint = @mission.checkpoints.build
 
     respond_to do |format|
       format.html # new.html.erb

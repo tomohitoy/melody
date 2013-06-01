@@ -1,24 +1,24 @@
-<h3>履歴</h3>
+<div class="container">
+    <div class="hero-unit">
+        <h1>メロディ</h1>
+    </div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <div class="row">
+        <div class="span12">
+            <p><%= link_to '新しいミッションを始める', new_mission_path, :class=>'btn' %></p>
+    	</div>
+    </div>
+    <div class="row">
+    	<% @missions.each do |mission|%>  
+        <div class="span4">
+            <h2><% mission.title %></h2>
+            <p><% mission.content %></p>
+        	<p style="color:red">まだミッションクリアしていません。</p>
+            <p><% link_to 'ミッションを見る', mission, :class=>'btn'%></p>
+        </div>
+        <% end %>
+    </div>
+</div>
 
-<% @missions.each do |mission| %>
-  <tr>
-    <td><%= mission.title %></td>
-    <td><%= mission.content %></td>
-    <td><%= link_to 'ミッションを見る', mission %></td>
-    <td><%= link_to '認定証を見る', certificate_mission_path(mission) %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
 
-<%= link_to '新しいミッションを始める', new_mission_path %>

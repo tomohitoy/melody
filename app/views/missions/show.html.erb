@@ -1,20 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <b>User:</b>
-  <%= @mission.user_id %>
-</p>
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit">
+                <h1>メロディ</h1>
+            </div>
 
-<p>
-  <b>Title:</b>
-  <%= @mission.title %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @mission.content %>
-</p>
-
-
-<%= link_to 'Edit', edit_mission_path(@mission) %> |
-<%= link_to 'Back', missions_path %>
+            <!-- Example row of columns -->
+    <div class="row">
+    	<div class="span6">
+        	<p><div id="map" class="span5" style="height:100%;border:1px solid red;">map</div></p>
+   		</div>
+    	<div class="span6">
+    		<form action="">
+                <h3>おばあちゃんち</h3>
+                <p>おばぁちゃんちまでのミッションです。</p>
+                <h3>チェックポイント</h3>
+                <p>
+                    <ol id="list">
+                        <li><i class="icon-ok"></i>家を出る </li>
+                        <li>近所の○○さんち</li>
+                        <li><i class="icon-ok"></i>○○駅</li>
+                        <li><i class="icon-star"></i>○○駅</li>
+                        <li>おばあちゃんち</li>
+                    </ol>
+                </p>
+            </form>
+        </div>
+    </div>        
+</div>

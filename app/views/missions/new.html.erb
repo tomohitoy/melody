@@ -1,5 +1,21 @@
-<h2>新しいミッションを作る</h2>
+<div class="hero-unit">
+    <h1>メロディ</h1>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'ホームに戻る', '/' %>
+<div class="row">
+    <div class="span12">
+        <%= form_for(@mission) do |f| %>
+	        <p>
+                <%= f.text_field :title, :class=>"span11", :placeholder => 'タイトル' %>
+                <%= f.text_area :content, :class=>"span11", :id => 'text' %>
+            </p>
+            <%= f.submit '次にチェックポイントを作る', :class=>'btn' %>
+        <% end %>
+	</div>
+</div>
+<script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>

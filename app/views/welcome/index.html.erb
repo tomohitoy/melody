@@ -1,5 +1,14 @@
-<h3>はじめてのチャレンジ</h3>
-
-<%= link_to '新しいミッション', new_mission_path %>
-<br/>
-<%= link_to 'ミッションの履歴', history_missions_path %>
+<div class="container">
+    <div class="hero-unit">
+        <h1>メロディ</h1>
+		<br/>
+		<form class="well form-inline">
+			<input type="text" class="input-small" placeholder="Email">
+			<input type="password" class="input-small" placeholder="Password">
+			<label class="checkbox">
+				<input type="checkbox"> 忘れた?
+			</label>
+		</form>
+        <p><%= link_to '親でログイン', history_missions_path, :class=>'btn btn-primary btn-large' %></p>
+    </div>
+</div>

@@ -1,5 +1,104 @@
-<h1>New checkpoint</h1>
+<script>
 
-<%= render 'form' %>
+    var pois=[];
+        google.maps.event.addDomListener(window, 'load', function() {
+            $("#goalnamebtn").attr('disabled', true);
 
-<%= link_to 'Back', checkpoints_path %>
+            var markerObj; 
+            var mapObj; 
+            var lng = 139.731008; 
+            var lat = 35.665724; 
+            var latlng = new google.maps.LatLng(lat, lng); 
+ 
+            var mapOptions = { 
+                zoom: 15, 
+                center: latlng, 
+                mapTypeId: google.maps.MapTypeId.ROADMAP, 
+                scaleControl: true 
+            }; 
+            mapObj = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); 
+ 
+            // クリックした場所にマーカーを追加 
+            $("#goalnamebtn").click(function(){
+                    var name=$("#goalname").val();
+                    var lat=$("#goalnamelat").val();
+                    var lng=$("#goalnamelng").val();
+
+                    if(name!="" && lat!="" && lng!=""){
+
+                        var ht = $("#list").html();
+                        $("#list").html(ht+"<li>"+name+"</li>");
+
+
+                        pois.push({"name":name,"lat":lat,"lng":lng})
+                        var latlng = new google.maps.LatLng(lat, lng);
+
+                        m = new google.maps.Marker({ 
+                            position: latlng, 
+                            map: mapObj,
+                            icon: "http://gmaps-samples.googlecode.com/svn/trunk/markers/red/marker"+pois.length+".png"
+                        });
+
+                        markerObj.setMap(null);
+
+                        $("#goalname").val("");
+                        $("#goalnamelat").val("");
+                        $("#goalnamelng").val("");
+                        $("#goalnamebtn").attr('disabled', true);
+                    }
+
+
+            });
+
+            google.maps.event.addListener(mapObj, 'click', function(e){ 
+                if(markerObj)
+                    markerObj.setMap(null);
+                $("#goalnamelat").val(e.latLng.lat());
+                $("#goalnamelng").val(e.latLng.lng());
+
+                $("#goalnamebtn").attr('disabled', false);
+
+                markerObj = new google.maps.Marker({ 
+                    position: e.latLng, 
+                    map: mapObj
+                });
+            });
+
+        });
+
+    </script>
+<div class="container">
+    <div class="hero-unit">
+        <h1>メロディ</h1>
+    </div>
+    
+    <div class="row">
+        <div class="span8">
+            <p><div id="map-canvas" class="span7" style="height:500px;">map</div></p>
+        </div>
+        <div class="span4">
+            <h3><%= @mission.title %></h3>
+            <p><%= @mission.content %></p>
+
+            <div id="inputckpoint">
+                <ol id="list">
+                </ol>
+                <%= form_for @checkpoint, :remote => true do |f| %>
+                	<%= f.hidden_field :mission_id %>
+                	<%= f.hidden_field :latitude, :id => 'goalnamelat' %>
+                	<%= f.hidden_field :longitude, :id => 'goalnamelng'%>
+                	<%= f.text_field :title, :id => 'goalname', :class=>'span3', :placeholder => '名前'%>
+                	<%= f.submit '追加', :id=>'goalnamebtn', :class=>'btn'%>
+                <% end %>
+            </div>
+            <br/>
+            <%= link_to 'ミッションの作成を終了する', @mission, :class=>'btn' %>
+    </div>
+</div>
+    
+    <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
