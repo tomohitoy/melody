@@ -3,6 +3,10 @@ class MilestonesController < ApplicationController
   # GET /milestones.json
   def index
     @milestones = Milestone.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @milestones }
+    end
   end
 
   # GET /milestones/1
