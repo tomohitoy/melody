@@ -1,5 +1,5 @@
 class Checkpoint < ActiveRecord::Base
-  attr_accessible :address, :latitude, :longitude, :mission_id, :point
+  attr_accessible :address, :latitude, :longitude, :mission_id, :point, :pointnum
   geocoded_by :address
   after_validation :geocode
   belongs_to :mission

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601054115) do
+ActiveRecord::Schema.define(:version => 20130601055829) do
 
   create_table "checkpoints", :force => true do |t|
     t.integer  "mission_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130601054115) do
     t.float    "longitude"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "pointnum"
   end
 
   create_table "milestones", :force => true do |t|
