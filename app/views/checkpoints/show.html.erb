@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Mission:</b>
+  <%= @checkpoint.mission_id %>
+</p>
+
+<p>
+  <b>Point:</b>
+  <%= @checkpoint.point %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @checkpoint.address %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @checkpoint.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @checkpoint.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_checkpoint_path(@checkpoint) %> |
+<%= link_to 'Back', checkpoints_path %>

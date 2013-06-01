@@ -1,4 +1,17 @@
 Melody::Application.routes.draw do
+  get "family/children"
+
+  get "family/parents"
+
+  resources :milestones
+
+
+  resources :checkpoints
+
+
+  resources :missions
+
+
   root :to => 'welcome#index'
 
   # The priority is based upon order of creation:

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @milestone.user_id %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @milestone.image %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @milestone.address %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @milestone.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @milestone.longitude %>
+</p>
+
+<p>
+  <b>Checkpoint:</b>
+  <%= @milestone.checkpoint_id %>
+</p>
+
+<p>
+  <b>Mission:</b>
+  <%= @milestone.mission_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_milestone_path(@milestone) %> |
+<%= link_to 'Back', milestones_path %>

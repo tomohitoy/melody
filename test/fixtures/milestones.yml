@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  image: MyString
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  checkpoint_id: 1
+  mission_id: 1
+
+two:
+  user_id: 1
+  image: MyString
+  address: MyString
+  latitude: 1.5
+  longitude: 1.5
+  checkpoint_id: 1
+  mission_id: 1
