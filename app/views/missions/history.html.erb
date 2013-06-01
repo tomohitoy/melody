@@ -1,0 +1,24 @@
+<h3>履歴</h3>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @missions.each do |mission| %>
+  <tr>
+    <td><%= mission.title %></td>
+    <td><%= mission.content %></td>
+    <td><%= link_to 'ミッションを見る', mission %></td>
+    <td><%= link_to '認定証を見る', certificate_mission_path(mission) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新しいミッションを始める', new_mission_path %>

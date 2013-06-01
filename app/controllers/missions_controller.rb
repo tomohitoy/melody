@@ -4,6 +4,16 @@ class MissionsController < ApplicationController
   def index
     @missions = Mission.all
   end
+  
+  def history
+    @missions = Mission.all
+  end
+  
+  def certificate
+    @mission = Missoin.find(params[:id])
+    @checkpoints = @mission.checkpoints
+    @milestones = @mission.milestones
+  end
 
   # GET /missions/1
   # GET /missions/1.json
