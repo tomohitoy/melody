@@ -16,7 +16,7 @@ development:
   pool: 5
   username: root
   password:
-  host: localhost
+  socket: /Applications/XAMPP/xamppfiles/var/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,7 +29,7 @@ test:
   pool: 5
   username: root
   password:
-  host: localhost
+  socket: /Applications/XAMPP/xamppfiles/var/mysql/mysql.sock
 
 production:
   adapter: mysql2
@@ -38,5 +38,5 @@ production:
   database: melody_production
   pool: 5
   username: root
-  password:
-  host: localhost
+  password: 5fmu4knue9
+  socket: /var/lib/mysql/mysql.sock
