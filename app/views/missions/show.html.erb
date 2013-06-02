@@ -77,7 +77,7 @@
                     map: mapObj,
                     icon: "http://wks.sakura.ne.jp/tmp/icons/"+(i+1)+"_1.png"
                 });
-                if(pois[i]["states"] && pois[i]["states"]!=0){
+                if(pois[i]["photo"] && pois[i]["photo"]!=""){
                     pois[i]["window"]=new google.maps.InfoWindow({content:'<img src="'+pois[i]["photo"]+'" width="200px"/>'});
                 }else{
                     pois[i]["window"]=new google.maps.InfoWindow({content:'<img src="http://wks.sakura.ne.jp/tmp/icons/lego_1_128.png"/>'});
