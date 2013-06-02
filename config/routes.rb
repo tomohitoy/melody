@@ -1,4 +1,7 @@
 Melody::Application.routes.draw do
+  get "mobile/index"
+  get "mobile/clear"
+  get "mobile/show"
   get "family/children"
   get "family/parents"
   resources :milestones
