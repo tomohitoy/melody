@@ -18,7 +18,8 @@ class MilestonesController < ApplicationController
   # GET /milestones/new
   # GET /milestones/new.json
   def new
-    @milestone = Milestone.new
+    @mission = Mission.find(params[:mission_id])
+    @milestone = @mission.milestones.build
   end
 
   # GET /milestones/1/edit
@@ -31,7 +32,11 @@ class MilestonesController < ApplicationController
   def create
     @milestone = Milestone.new(params[:milestone])
     @mission = @milestone.mission
-    @milestone.save
+    if @milestone.save
+		redirect_to certificate_mission_path(@mission)
+    else
+    	redirect_to mobile_show_path(:mission_id => @mission.id)
+    end
   end
 
   # PUT /milestones/1

@@ -10,7 +10,7 @@ class MissionsController < ApplicationController
   end
   
   def certificate
-    @mission = Missoin.find(params[:id])
+    @mission = Mission.find(params[:id])
     @checkpoints = @mission.checkpoints
     @milestones = @mission.milestones
   end

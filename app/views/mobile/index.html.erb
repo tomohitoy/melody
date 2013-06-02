@@ -5,7 +5,7 @@
 		<% @missions.each do |mission|%>
 			<li><%= mission.title %>
 				<ul>
-					<a href="<%= mobile_show_path(:mission_id => mission.id) %>" data-ajax="false" data-role="button" data-transition="slide">はじめる</a>
+					<a href="<%= new_milestone_path(:mission_id => mission.id) %>" data-ajax="false" data-role="button" data-transition="slide">はじめる</a>
 					<a href="/mobile/index" data-ajax="false" data-role="button" data-transition="slide">やめる</a>
 				</ul>
 			</li>

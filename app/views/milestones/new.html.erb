@@ -1,5 +1,18 @@
-<h1>New milestone</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', milestones_path %>
+  <div data-role="page" id="p-listview-ordered">
+    <div data-role="content">
+	  <p>次のミッション</p>
+      <ol data-role="listview">
+      	<% @mission.checkpoints.each do |checkpoint|%>
+        <li><%= checkpoint.title %></li>
+        <% end %>
+      </ol>
+	   
+    </div>
+    	<%= form_for @milestone, :html => {:multipart => true} do |f| %>
+    		<%= f.file_field :image %>
+    		<%= f.hidden_field :latitude %>
+    		<%= f.hidden_field :longitude %>
+    		<%= f.hidden_field :mission_id %>
+    		<%= f.submit 'しゃしんをおくる'%>
+    	<% end %>
+  </div>

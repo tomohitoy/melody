@@ -1,0 +1,23 @@
+<div id="home" data-role="page">
+	<div data-role="header" align="center">
+    	<h1>にんていしょ</h1>
+    </div>                     
+    <div data-role="content">
+		<div align="center">
+			<p>ミッション〈おばあちゃんち〉クリア<br></div>
+        あなたはミッションおばあちゃんちにおいてみごと１つのミッションをクリアしたことをここににんていします</p>
+        <div align="center">
+			<div style="">
+				<% @mission.milestones.each do |milestone|%>
+					<%= image_tag milestone.image_url.to_s %>
+				<% end %>
+				<%= image_tag 'hanamaru.png'%>
+			</div>
+		</div>
+	</div>
+	<div align="right">
+		<p>平成２５年６月２日<br>
+    	母親　佐藤花子</p>
+	</div>
+</div>
+ 
