@@ -19,7 +19,7 @@
                                 <li>
                                     <span class="key"><%= checkpoint.id %></span>
                                     <span class="states"><%= checkpoint.state %></span>
-                                    <span class="photo"><%= milestone.image %></span>
+                                    <span class="photo"><%= checkpoint.milestone.image %></span>
                                     <span class="name"><%= checkpoint.title %></span>
                                     <span class="lat"><%= checkpoint.latitude %></span>
                                     <span class="lng"><%= checkpoint.longitude %></span>
@@ -73,7 +73,7 @@
                 pois[i]["marker"] = new google.maps.Marker({ 
                     position: new google.maps.LatLng(pois[i]["lat"], pois[i]["lng"]), 
                     map: mapObj,
-                    icon: "/icons/"+(i+1)+"_1.png"
+                    icon: "http://wks.sakura.ne.jp/tmp/icons/"+(i+1)+"_1.png"
                 });
                 if(pois[i]["states"] && pois[i]["states"]!=0){
                     pois[i]["window"]=new google.maps.InfoWindow({content:'<img src="'+pois[i]["photo"]+'" width="200px"/>'});

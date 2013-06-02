@@ -32,6 +32,10 @@ class MilestonesController < ApplicationController
   def create
     @milestone = Milestone.new(params[:milestone])
     @mission = @milestone.mission
+    @checkpoints = @mission.checkpoints
+    @checkpoints.each do |checkpoint|
+    	if sprintf( "%.3f", checkpoint.latitude) == sprintf( "%.3f", @milestone.latitude)
+    end
     if @milestone.save
 		redirect_to certificate_mission_path(@mission)
     else
