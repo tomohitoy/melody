@@ -11,10 +11,10 @@
     <div class="row">
     	<% @missions.each do |mission|%>  
         <div class="span4">
-            <h2><% mission.title %></h2>
-            <p><% mission.content %></p>
+            <h2><%= mission.title %></h2>
+            <p><%= mission.content %></p>
         	<p style="color:red">まだミッションクリアしていません。</p>
-            <p><% link_to 'ミッションを見る', mission, :class=>'btn'%></p>
+            <p><%= link_to 'ミッションを見る', mission, :class=>'btn'%></p>
         </div>
         <% end %>
     </div>
