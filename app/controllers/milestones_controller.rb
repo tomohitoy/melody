@@ -34,10 +34,8 @@ class MilestonesController < ApplicationController
     @mission = @milestone.mission
     @checkpoints = @mission.checkpoints
     @checkpoints.each do |checkpoint|
-    	if get_distance(checkpoint.latitude,checkpoint.longitude,@milestonde.latitude,@milestonde.longitude) < 100
-    	checkpoint.state = true
-    	@milestone.checkpoint_id = checkpoint.id
-    	end
+      checkpoint.state = true
+      @milestone.checkpoint_id = checkpoint.id
     end
     if @milestone.save
 		redirect_to certificate_mission_path(@mission)
@@ -67,9 +65,5 @@ class MilestonesController < ApplicationController
   def destroy
     @milestone = Milestone.find(params[:id])
     @milestone.destroy
-  end
-  
-  def get_distance(lat1, lng1, lat2, lng2)
-    ((Math.acos( Math.sin(lat1 * Math::PI / 180) * Math.sin(lat2 * Math::PI / 180) + Math.cos(lat1 * Math::PI / 180) * Math.cos(lat2 * Math::PI / 180) * Math.cos((lng1 - lng2) * Math::PI / 180) ) * 180 / Math::PI) * 111189.57696).round
   end
 end
