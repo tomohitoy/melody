@@ -18,7 +18,7 @@
                             	<% @mission.checkpoints.each do |checkpoint|%>
                                 <li>
                                     <span class="key"><%= checkpoint.id %></span>
-                                    <span class="states">0</span>
+                                    <span class="states"><%= checkpoint.state %></span>
                                     <span class="photo"><%= milestone.image %></span>
                                     <span class="name"><%= checkpoint.title %></span>
                                     <span class="lat"><%= checkpoint.latitude %></span>
@@ -28,7 +28,6 @@
                             </ol>                   
                         </div>
                         <hr/>
-                        <a href="#" onclick="updateCKpoint('<%= checkpoint.id %>');return false;">テスト：六本木駅に到着</a>
 
             </div>
 </div>

@@ -7,7 +7,7 @@
 			<p>ミッション〈おばあちゃんち〉クリア<br></div>
         あなたはミッションおばあちゃんちにおいてみごと１つのミッションをクリアしたことをここににんていします</p>
         <div align="center">
-			<div style="">
+			<div style="row">
 				<% @mission.milestones.each do |milestone|%>
 					<%= image_tag milestone.image_url.to_s %>
 				<% end %>
