@@ -1,3 +1,19 @@
+<script>
+$(function(){
+if(navigator.geolocation)
+navigator.geolocation.getCurrentPosition(
+function(pos){
+$("#lat").val(pos.coords.latitude);
+$("#lng").val(pos.coords.longitude);
+},function(){
+alert('いち を とれる きのう が ないよ！')
+}
+);
+else{
+alert('いち を とれる きのう が ないよ！')
+}
+});
+</script>
   <div data-role="page" id="p-listview-ordered">
     <div data-role="content">
 	  <p>次のミッション</p>
@@ -10,8 +26,8 @@
     </div>
     	<%= form_for @milestone, :html => {:multipart => true} do |f| %>
     		<%= f.file_field :image %>
-    		<%= f.hidden_field :latitude %>
-    		<%= f.hidden_field :longitude %>
+    		<%= f.hidden_field :latitude, :id => 'lat' %>
+    		<%= f.hidden_field :longitude, :id => 'lng' %>
     		<%= f.hidden_field :mission_id %>
     		<%= f.submit 'しゃしんをおくる'%>
     	<% end %>

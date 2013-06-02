@@ -36,7 +36,7 @@
                         m = new google.maps.Marker({ 
                             position: latlng, 
                             map: mapObj,
-                            icon: "http://gmaps-samples.googlecode.com/svn/trunk/markers/red/marker"+pois.length+".png"
+                            icon: "/icons/"+pois.length+"_1.png"
                         });
 
                         markerObj.setMap(null);
@@ -60,11 +60,13 @@
 
                 markerObj = new google.maps.Marker({ 
                     position: e.latLng, 
-                    map: mapObj
+                    map: mapObj,
+                    icon: "/icons/lego_1_64.png"
                 });
             });
 
         });
+
 
     </script>
 <div class="container">

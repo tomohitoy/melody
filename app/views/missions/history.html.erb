@@ -14,7 +14,7 @@
             <h2><%= mission.title %></h2>
             <p><%= mission.content %></p>
             <p><%= link_to 'ミッションを見る', mission, :class=>'btn'%></p>
-            <p><%= link_to '認定書を見る', ,certificate_mission_path(mission), :class=>'btn btn-primary'%></p>
+            <p><%= link_to '認定書を見る', certificate_mission_path(mission), :class=>'btn btn-primary'%></p>
         </div>
         <% end %>
     </div>
