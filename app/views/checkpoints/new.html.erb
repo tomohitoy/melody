@@ -2,7 +2,6 @@
 
     var pois=[];
         google.maps.event.addDomListener(window, 'load', function() {
-            $("#goalnamebtn").attr('disabled', true);
 
             var markerObj; 
             var mapObj; 
@@ -44,7 +43,6 @@
                         $("#goalname").val("");
                         $("#goalnamelat").val("");
                         $("#goalnamelng").val("");
-                        $("#goalnamebtn").attr('disabled', true);
                     }
 
 
@@ -55,8 +53,6 @@
                     markerObj.setMap(null);
                 $("#goalnamelat").val(e.latLng.lat());
                 $("#goalnamelng").val(e.latLng.lng());
-
-                $("#goalnamebtn").attr('disabled', false);
 
                 markerObj = new google.maps.Marker({ 
                     position: e.latLng, 
@@ -85,7 +81,7 @@
             <div id="inputckpoint">
                 <ol id="list">
                 </ol>
-                <%= form_for @checkpoint, :remote => true do |f| %>
+                <%= form_for @checkpoint, :html => { :remote => true } do  |f| %>
                 	<%= f.hidden_field :mission_id %>
                 	<%= f.hidden_field :latitude, :id => 'goalnamelat' %>
                 	<%= f.hidden_field :longitude, :id => 'goalnamelng'%>

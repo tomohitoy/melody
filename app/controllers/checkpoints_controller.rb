@@ -26,11 +26,6 @@ class CheckpointsController < ApplicationController
   def new
     @mission = Mission.find(params[:mission_id])
     @checkpoint = @mission.checkpoints.build
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @checkpoint }
-    end
   end
 
   # GET /checkpoints/1/edit
@@ -42,16 +37,7 @@ class CheckpointsController < ApplicationController
   # POST /checkpoints.json
   def create
     @checkpoint = Checkpoint.new(params[:checkpoint])
-
-    respond_to do |format|
-      if @checkpoint.save
-        format.html { redirect_to @checkpoint, notice: 'Checkpoint was successfully created.' }
-        format.json { render json: @checkpoint, status: :created, location: @checkpoint }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @checkpoint.errors, status: :unprocessable_entity }
-      end
-    end
+    @checkpoint.save
   end
 
   # PUT /checkpoints/1

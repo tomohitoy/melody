@@ -19,7 +19,9 @@
                                 <li>
                                     <span class="key"><%= checkpoint.id %></span>
                                     <span class="states"><%= checkpoint.state %></span>
-                                    <span class="photo"><%= checkpoint.milestone.image %></span>
+                                    <% if checkpoint.milestone %>
+                                    <span class="photo"><%= checkpoint.milestone.image_url %></span>
+                                    <% end %>
                                     <span class="name"><%= checkpoint.title %></span>
                                     <span class="lat"><%= checkpoint.latitude %></span>
                                     <span class="lng"><%= checkpoint.longitude %></span>
