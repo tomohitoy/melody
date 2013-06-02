@@ -39,7 +39,6 @@ class MilestonesController < ApplicationController
     end
     if @milestone.save
 		redirect_to certificate_mission_path(@mission)
-		PrivatePub.publish_to("/missions/show".concat(@mission.id.to_s), "alert('#{@message.content}');")
     else
     	redirect_to mobile_show_path(:mission_id => @mission.id)
     end
