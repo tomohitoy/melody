@@ -33,9 +33,13 @@ class MilestonesController < ApplicationController
     @milestone = Milestone.new(params[:milestone])
     @mission = @milestone.mission
     @checkpoints = @mission.checkpoints
-    @checkpoints.each do |checkpoint|
-    	if sprintf( "%.3f", checkpoint.latitude) == sprintf( "%.3f", @milestone.latitude)
-    end
+    #@checkpoints.each do |checkpoint|
+    #	if sprintf( "%.3f", checkpoint.latitude) == sprintf( "%.3f", @milestone.latitude) && sprintf( "%.3f", checkpoint.longitude) == sprintf( "%.3f", @milestone.logitude)
+    #	  checkpoint.state == true
+    #	  checkpoint.save
+    #	  @milestone.checkpoint_id => checkpoint.id
+    #	end
+    #end
     if @milestone.save
 		redirect_to certificate_mission_path(@mission)
     else
