@@ -35,7 +35,7 @@ class MilestonesController < ApplicationController
     @checkpoints = @mission.checkpoints
     @checkpoints.each do |checkpoint|
     	checkpoint.state = true
-    	@milestone.checkpoiont_id = checkpoint.id
+    	@milestone.checkpoint_id = checkpoint.id
     end
     if @milestone.save
 		redirect_to certificate_mission_path(@mission)
