@@ -63,7 +63,7 @@
             $('#list li').each(function(){
                 i++;
                 var states=$(".states",this).html();
-                pois.push({"key":$(".key",this).html(),"states":states,"photo":$(".photo",this).html(),"name":$(".name",this).html(),"lat":$(".lat",this).html(),"lng":$(".lng",this).html()});
+                pois.push({"key":$(".key",this).html(),"states":states,"photo":$(".photo img",this).attr("src"),"name":$(".name",this).html(),"lat":$(".lat",this).html(),"lng":$(".lng",this).html()});
                 if(states==1){
                     $(this).css("color","blue");
                     nowckpoint=i;
