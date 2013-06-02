@@ -42,7 +42,6 @@ class MissionsController < ApplicationController
   # POST /missions.json
   def create
     @mission = Mission.new(params[:mission])
-    @mission.finished = false
     if @mission.save
       redirect_to new_checkpoint_path(:mission_id => @mission.id)
     else
