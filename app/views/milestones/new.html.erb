@@ -8,7 +8,7 @@
       </ol>
 	   
     </div>
-    	<%= form_for @milestone, :html => {:multipart => true} do |f| %>
+    	<%= form_for @milestone, :html => {:multipart => true, :'data-ajax' => false} do |f| %>
     		<%= f.file_field :image %>
     		<%= f.hidden_field :latitude %>
     		<%= f.hidden_field :longitude %>
