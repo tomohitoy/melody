@@ -30,6 +30,7 @@ class MilestonesController < ApplicationController
   # POST /milestones.json
   def create
     @milestone = Milestone.new(params[:milestone])
+    @mission = @milestone.mission
     @milestone.save
   end
 

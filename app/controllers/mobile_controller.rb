@@ -4,7 +4,8 @@ class MobileController < ApplicationController
   end
 
   def show
-    @mission = Mission.find(params[:misson_id])
+    @mission = Mission.find(params[:mission_id])
+    @milestone = @mission.milestones.build
   end
   def clear
     

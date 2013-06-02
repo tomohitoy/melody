@@ -1,32 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>リストビュー</title>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css"/>
-<link rel="stylesheet" href="css/custom.css"/>
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-<script src="js/custom.js"></script>
-</head>
-<body>
   <div data-role="page" id="p-listview-ordered">
     <div data-role="content">
-      <h3>つぎのミッション</h3>
 	  <p>次のミッション</p>
       <ol data-role="listview">
-        <li>いえをでる</li>
-        <li>○○さんのいえ</li>
-        <li>○○駅</li>
-        <li>××駅</li>
-        <li>△△やさん</li>
-        <li>おばあちゃんち</li>
+      	<% @mission.checkpoints.each do |checkpoint|%>
+        <li><%= checkpoint.title %></li>
+        <% end %>
       </ol>
 	   
     </div>
-	<button>しゃしんをおくる</button>
-	    <textarea name="textarea" id="textarea-1"></textarea>
+    	<%= form_for @milestone, :remote=>true, :html => {:multipart => true} do |f| %>
+    		<%= f.file_field :image, :value =>  'しゃしんをとる' %>
+    		<%= f.hidden_field :latitude %>
+    		<%= f.hidden_field :longitude %>
+    		<%= f.hidden_field :mission_id %>
+    		<%= f.submit 'しゃしんをおくる'%>
+    	<% end %>
   </div>
-</body>
-</html>
