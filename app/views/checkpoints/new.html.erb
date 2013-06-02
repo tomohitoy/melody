@@ -83,8 +83,8 @@
                 </ol>
                 <%= form_for @checkpoint, :html => { :remote => true } do  |f| %>
                 	<%= f.hidden_field :mission_id %>
-                	<%= f.hidden_field :latitude, :id => 'goalnamelat' %>
-                	<%= f.hidden_field :longitude, :id => 'goalnamelng'%>
+                	<%= f.hidden_field :latitude, :id => "goalnamelat" %>
+                	<%= f.hidden_field :longitude, :id => "goalnamelng"%>
                 	<%= f.text_field :title, :id => 'goalname', :class=>'span3', :placeholder => '名前'%>
                 	<%= f.submit '追加', :id=>'goalnamebtn', :class=>'btn'%>
                 <% end %>
