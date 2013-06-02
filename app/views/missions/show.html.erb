@@ -20,7 +20,7 @@
                                     <span class="key"><%= checkpoint.id %></span>
                                     <span class="states"><%= checkpoint.state %></span>
                                     <% if checkpoint.milestone %>
-                                    <span class="photo"><%= checkpoint.milestone.image_url.to_s %></span>
+                                    <span class="photo"><%= asset_path checkpoint.milestone.image_url.to_s %></span>
                                     <% end %>
                                     <span class="name"><%= checkpoint.title %></span>
                                     <span class="lat"><%= checkpoint.latitude %></span>
